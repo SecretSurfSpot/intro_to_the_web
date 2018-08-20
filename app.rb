@@ -9,14 +9,12 @@ get '/secret' do
 end
 
 get '/random-cat' do
-  @random_name = ['Amigo', 'Oscar', 'Viking'].sample
+  @name = ['Amigo', 'Oscar', 'Viking'].sample
   erb(:index)
 end
 
 get '/named-cat' do
   p params[:name]
-  p params[:address]
-  p params[:phone_number]
-  @random_name = params[:name]
-  erb(:index)
+  @name = params[:name]
+  erb:index
 end
